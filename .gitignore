@@ -1,0 +1,4 @@
+.env
+script.py
+__pycache__/
+myenv/
