@@ -2,3 +2,8 @@
 script.py
 __pycache__/
 myenv/
+venv/
+rag_log.log
+**/.vscode
+model_speech/
+chat_history_examples/

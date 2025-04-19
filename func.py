@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from typing import Literal, List
 from pydantic import BaseModel
-from pydantic.types import Json
 
 app = FastAPI()
 
@@ -35,6 +34,11 @@ def delete_task(task_name: str) -> MessageResponse:
             return {"message": "Task deleted successfully"}
     return {"message": "Task not found"}
 
+import uvicorn
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080)
+
+# uvicorn func:app --reload --port 8080
 # @app.get("/")
 # def read_root():
 #     return {"Hello": "World"}
