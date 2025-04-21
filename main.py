@@ -224,7 +224,7 @@ def display_prev_messages():
         if not isinstance(message, Dict):
             message = message.model_dump()
         if message.get("role") in ["assistant", "user"] and message.get("content"): # non-rag response
-            print(message)
+            # print(message)
             with st.chat_message(message.get("role")):
                 st.markdown(message.get("content"))
 
@@ -300,7 +300,7 @@ def main_loop():
         st.session_state.messages.append({"role": "user", "content": user_prompt})
         display_prev_messages()
         new_messages = run_openai(st.session_state.messages)
-        print("ST SESSION MESSAGES:", st.session_state.messages)
+        # print("ST SESSION MESSAGES:", st.session_state.messages)
         st.session_state.messages.extend(new_messages)
         
     elif switched_ai_voice:
